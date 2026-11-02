@@ -6,19 +6,24 @@ module alu_4bit (
     input  logic       clk,
     input  logic       rst,
     output logic [3:0] result,
-    output logic       carry
+    output logic       carry, 
+    output logic       zero, 
+    output logic       neg, 
+    output logic       ovf
 );
 
     // Internal combinational signals
     logic [4:0] full_sum;
     logic [3:0] alu_out;
     logic       carry_out;
+    logic       ovf_out;
 
     // Combinational ALU
 
 always_comb begin
     full_sum  = 5'b00000;
     carry_out = 1'b0;
+    ovf_out = 0; 
 
     case (op)
 
@@ -26,12 +31,15 @@ always_comb begin
         4'b0000: begin
             full_sum  = {1'b0, a} + {1'b0, b};
             carry_out = full_sum[4];
+            ovf_out = (a[3] == b[3]) && (a[3] != full_sum[3]);
         end
 
         // SUB: carry flag indicates borrow
         4'b0001: begin
             full_sum  = {1'b0, a} - {1'b0, b};
             carry_out = full_sum[4];
+            ovf_out = (a[3] != b[3]) && (a[3] != full_sum[3]);
+
         end
 
         // Bitwise operations
@@ -85,10 +93,16 @@ end
         if (rst) begin
             result <= 4'b0000;
             carry  <= 1'b0;
+            zero <= 0;
+            neg <= 0;
+            ovf <= 0; 
         end
         else begin
             result <= alu_out;
             carry  <= carry_out;
+            zero <= (alu_out == 4'b0000);
+            neg <= alu_out[3];       
+            ovf <= ovf_out;   
         end
     end
 
