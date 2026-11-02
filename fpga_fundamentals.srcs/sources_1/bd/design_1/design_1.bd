@@ -1,0 +1,117 @@
+{
+  "design": {
+    "design_info": {
+      "boundary_crc": "0xBB49FA32D5656B72",
+      "device": "xc7a200tfbg676-2",
+      "gen_directory": "../../../../fpga_fundamentals.gen/sources_1/bd/design_1",
+      "name": "design_1",
+      "rev_ctrl_bd_flag": "RevCtrlBdOff",
+      "synth_flow_mode": "Hierarchical",
+      "tool_version": "2026.1",
+      "validated": "true"
+    },
+    "design_tree": {
+      "alu_4bit_0": ""
+    },
+    "ports": {
+      "clk_0": {
+        "type": "clk",
+        "direction": "I",
+        "parameters": {
+          "ASSOCIATED_RESET": {
+            "value": "rst"
+          },
+          "CLK_DOMAIN": {
+            "value": "design_1_clk_0",
+            "value_src": "default"
+          },
+          "FREQ_HZ": {
+            "value": "100"
+          },
+          "FREQ_TOLERANCE_HZ": {
+            "value": "0",
+            "value_src": "default"
+          },
+          "INSERT_VIP": {
+            "value": "0",
+            "value_src": "default"
+          },
+          "PHASE": {
+            "value": "0.0",
+            "value_src": "default"
+          }
+        }
+      }
+    },
+    "components": {
+      "alu_4bit_0": {
+        "vlnv": "xilinx.com:module_ref:alu_4bit:1.0",
+        "ip_revision": "1",
+        "xci_name": "design_1_alu_4bit_0_0",
+        "xci_path": "ip\\design_1_alu_4bit_0_0\\design_1_alu_4bit_0_0.xci",
+        "inst_hier_path": "alu_4bit_0",
+        "has_run_ip_tcl": "true",
+        "reference_info": {
+          "ref_type": "hdl",
+          "ref_name": "alu_4bit",
+          "boundary_crc": "0x0"
+        },
+        "ports": {
+          "a": {
+            "direction": "I",
+            "left": "3",
+            "right": "0"
+          },
+          "b": {
+            "direction": "I",
+            "left": "3",
+            "right": "0"
+          },
+          "op": {
+            "direction": "I",
+            "left": "2",
+            "right": "0"
+          },
+          "clk": {
+            "type": "clk",
+            "direction": "I",
+            "parameters": {
+              "ASSOCIATED_RESET": {
+                "value": "rst",
+                "value_src": "constant"
+              },
+              "FREQ_HZ": {
+                "value": "100",
+                "value_src": "user_prop"
+              },
+              "CLK_DOMAIN": {
+                "value": "design_1_clk_0",
+                "value_src": "default_prop"
+              }
+            }
+          },
+          "rst": {
+            "type": "rst",
+            "direction": "I"
+          },
+          "result": {
+            "direction": "O",
+            "left": "3",
+            "right": "0"
+          },
+          "carry": {
+            "direction": "O"
+          }
+        }
+      }
+    },
+    "nets": {
+      "clk_0_1": {
+        "ports": [
+          "clk_0",
+          "alu_4bit_0/clk"
+        ]
+      }
+    }
+  }
+}

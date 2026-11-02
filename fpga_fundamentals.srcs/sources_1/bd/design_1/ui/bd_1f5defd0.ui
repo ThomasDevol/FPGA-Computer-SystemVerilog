@@ -1,0 +1,20 @@
+{
+   "ActiveEmotionalView":"Default View",
+   "Default View_Layers":"/clk_0_1:true|",
+   "Default View_ScaleFactor":"1.90423",
+   "Default View_TopLeft":"-757,-83",
+   "Display-PortTypeClock":"true",
+   "ExpandedHierarchyInLayout":"",
+   "Interfaces View_Layers":"/clk_0_1:false|",
+   "Interfaces View_ScaleFactor":"0.8",
+   "Interfaces View_TopLeft":"-940,-355",
+   "guistr":"# # String gsaved with Nlview 7.8.0 2024-04-26 e1825d835c VDI=44 GEI=38 GUI=JA:24.0 threadsafe
+#  -string -flagsOSRD
+preplace port port-id_clk_0 -pg 1 -lvl 0 -x -530 -y -30 -defaultsOSRD
+preplace inst alu_4bit_0 -pg 1 -lvl 1 -x -390 -y 80 -defaultsOSRD
+preplace netloc clk_0_1 1 0 1 -510 -30n
+levelinfo -pg 1 -530 -390 120
+pagesize -pg 1 -db -bbox -sgen -620 -150 240 200
+"
+}
+0

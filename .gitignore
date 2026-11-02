@@ -1,0 +1,22 @@
+
+# Vivado generated directories
+.Xil/
+*.cache/
+*.runs/
+*.sim/
+*.gen/
+*.hw/
+*.ip_user_files/
+
+# Logs and temporary files
+*.log
+*.jou
+*.str
+*.wdb
+*.pb
+*.backup.jou
+*.backup.log
+
+# Windows
+Thumbs.db
+Desktop.ini
